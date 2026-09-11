@@ -27,6 +27,9 @@ public class GerenciadorTela {
                 case IR_PARA_NOVO_JOGO:
                     atual = new TelaNovoJogo(contexto);
                     break;
+                case IR_PARA_CARREGAR_JOGO:
+                    atual = new TelaCarregarJogo(contexto);
+                    break;
                 case IR_PARA_JOGO:
                     atual = new TelaJogo(contexto);
                     break;
