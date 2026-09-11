@@ -104,6 +104,14 @@ public abstract class Jogador extends Personagem{
         return pocoesMana;
     }
     
+    public Raca getRaca() {
+        return raca;
+    }
+    
+    public String getSexo() {
+        return sexo;
+    }
+    
     public ClassePersonagem getClasse() {
         return classe;
     }

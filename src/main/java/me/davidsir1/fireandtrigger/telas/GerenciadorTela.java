@@ -1,5 +1,7 @@
 package me.davidsir1.fireandtrigger.telas;
 
+import me.davidsir1.fireandtrigger.ContextoJogo;
+
 /**
  *
  * @author david
@@ -7,10 +9,12 @@ package me.davidsir1.fireandtrigger.telas;
 public class GerenciadorTela {
     private boolean rodando;
     private ResultadoTela.Acao estadoAtual;
+    private ContextoJogo contexto;
     
     public GerenciadorTela() {
         this.rodando = true;
         this.estadoAtual = ResultadoTela.Acao.IR_PARA_INICIAL;
+        this.contexto = new ContextoJogo();
     }
     
     public void executar() {
@@ -18,9 +22,10 @@ public class GerenciadorTela {
             TelaBase atual = null;
             switch (estadoAtual) {
                 case IR_PARA_INICIAL:
-                    atual = new TelaInicial();
+                    atual = new TelaInicial(contexto);
                     break;
                 case IR_PARA_NOVO_JOGO:
+                    atual = new TelaNovoJogo(contexto);
                     break;
                 case IR_PARA_JOGO:
                     break;
