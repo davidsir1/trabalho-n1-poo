@@ -17,6 +17,7 @@ public class TelaInicial extends TelaBase {
     public ResultadoTela.Acao exibir() {
         Scanner leitura = new Scanner(System.in);
                 
+        System.out.println("====================================");
         System.out.println("F I R E  A N D  T R I G G E R");
         System.out.println();
         System.out.println("1 - Começar Jogo");
