@@ -38,6 +38,7 @@ public abstract class Jogador extends Personagem{
         this.experienciaAtual += experienciaGanha;
         if (this.experienciaAtual >= this.experienciaProximoNivel) {
             // Método para subir de nível
+            subirDeNivel();
         }
     }
     
