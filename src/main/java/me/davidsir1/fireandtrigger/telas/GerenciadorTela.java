@@ -28,6 +28,7 @@ public class GerenciadorTela {
                     atual = new TelaNovoJogo(contexto);
                     break;
                 case IR_PARA_JOGO:
+                    atual = new TelaJogo(contexto);
                     break;
                 default:
                     rodando = false;

@@ -8,6 +8,15 @@ import me.davidsir1.fireandtrigger.entidades.Jogador;
  */
 public class ContextoJogo {
     private Jogador jogador;
+    private int nivelMasmorra;
+
+    public int getNivelMasmorra() {
+        return nivelMasmorra;
+    }
+
+    public void setNivelMasmorra(int nivelMasmorra) {
+        this.nivelMasmorra = nivelMasmorra;
+    }
 
     public Jogador getJogador() {
         return jogador;
