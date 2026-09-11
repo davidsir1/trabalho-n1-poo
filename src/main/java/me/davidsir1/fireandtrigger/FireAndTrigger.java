@@ -24,7 +24,7 @@ public class FireAndTrigger {
                 "o mecanismo ruiu. As velhas fogueiras se apagaram e a 'Ordem' foi quebrada.");
         System.out.println("  Dois mundos agora se colidem. Portais de chama incadescente rasgam os ceús, e as hordas do Abismo " +
                 "macharão sobre as terra dos homens.\n");
-        System.out.println("  As profecias falavam de um escolhido.. mas você nãoe é o escolhido das lendas. Você é apenas mais " +
+        System.out.println("  As profecias falavam de um escolhido.. mas você não é o escolhido das lendas. Você é apenas " +
                 "um prisoneiro nas masmorras esquecidas sob as cinzas da capital.\n");
         System.out.println("  O Fogo foi aceso...");
         
