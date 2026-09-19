@@ -11,6 +11,7 @@ public class ResultadoTela {
         IR_PARA_NOVO_JOGO,
         IR_PARA_CARREGAR_JOGO,
         IR_PARA_JOGO,
+        JOGADOR_MORREU,
         SAIR
     }
     
