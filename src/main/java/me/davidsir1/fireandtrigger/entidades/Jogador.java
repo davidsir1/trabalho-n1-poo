@@ -34,7 +34,7 @@ public abstract class Jogador extends Personagem{
     public abstract void usarHabilidadeEspecial(Personagem alvo);
     
     // Métodos
-    public void ganharExperiencia(int experienciaGanha) {
+    public void ganharExperiencia(double experienciaGanha) {
         this.experienciaAtual += experienciaGanha;
         if (this.experienciaAtual >= this.experienciaProximoNivel) {
             // Método para subir de nível
