@@ -59,20 +59,16 @@ public class TelaJogo extends TelaBase {
                     EventoMasmorra evento = explorar();
 
                     switch (evento) {
-
                         case NADA:
                             System.out.println("Jogador não encontrou nada de interessante...");
                             pausar();
                             break;
-
                         case ENCONTRO_INIMIGO:
                             tratarEncontroInimigo();
                             break;
-
                         case ENCONTRO_BAU:
                             tratarEncontroBau();
                             break;
-
                         case ENCONTRO_SAIDA:
                             tratarEncontroSaida();
                             break;
@@ -125,6 +121,65 @@ public class TelaJogo extends TelaBase {
                     pausar();
                     break;
             }
+        }
+    }
+    
+    /**
+     * Controla o encontro com um inimigo.
+     */
+    private void tratarEncontroInimigo() {
+
+        System.out.println();
+        System.out.println("====================================");
+        System.out.println("ENCONTRO COM INIMIGO");
+        System.out.println("====================================");
+        System.out.println("Você encontrou: " + inimigoAtual.getNome());
+        System.out.println();
+        System.out.println("1 - Lutar");
+        System.out.println("2 - Fugir");
+        System.out.print("Opção: ");
+
+        int opcao = leitura.nextInt();
+
+        if (opcao == 1) {
+
+            TelaCombate telaCombate =
+                    new TelaCombate(contexto, inimigoAtual);
+
+            ResultadoTela.Acao resultado = telaCombate.exibir();
+
+            if (resultado == ResultadoTela.Acao.JOGADOR_MORREU) {
+                return;
+            }
+
+            ultimaMensagem = telaCombate.getUltimaMensagem();
+
+        } else if (opcao == 2) {
+
+            // O jogador tem 25% de chance de fugir.
+            if (sorteio.nextInt(100) < 25) {
+
+                ultimaMensagem = "Você conseguiu fugir do inimigo!";
+
+            } else {
+
+                ultimaMensagem = "Você não conseguiu fugir!";
+                System.out.println(ultimaMensagem);
+
+                inimigoAtual.acaoAutomatica(contexto.getJogador());
+
+                if (!contexto.getJogador().estaVivo()) {
+                    return;
+                }
+            }
+
+            System.out.println(ultimaMensagem);
+            pausar();
+
+        } else {
+
+            System.out.println("Não existe essa opção!");
+            pausar();
         }
     }
 
@@ -209,65 +264,6 @@ public class TelaJogo extends TelaBase {
                 defesa,
                 experiencia
         );
-    }
-
-    /**
-     * Controla o encontro com um inimigo.
-     */
-    private void tratarEncontroInimigo() {
-
-        System.out.println();
-        System.out.println("====================================");
-        System.out.println("ENCONTRO COM INIMIGO");
-        System.out.println("====================================");
-        System.out.println("Você encontrou: " + inimigoAtual.getNome());
-        System.out.println();
-        System.out.println("1 - Lutar");
-        System.out.println("2 - Fugir");
-        System.out.print("Opção: ");
-
-        int opcao = leitura.nextInt();
-
-        if (opcao == 1) {
-
-            TelaCombate telaCombate =
-                    new TelaCombate(contexto, inimigoAtual);
-
-            ResultadoTela.Acao resultado = telaCombate.exibir();
-
-            if (resultado == ResultadoTela.Acao.JOGADOR_MORREU) {
-                return;
-            }
-
-            ultimaMensagem = telaCombate.getUltimaMensagem();
-
-        } else if (opcao == 2) {
-
-            // O jogador tem 25% de chance de fugir.
-            if (sorteio.nextInt(100) < 25) {
-
-                ultimaMensagem = "Você conseguiu fugir do inimigo!";
-
-            } else {
-
-                ultimaMensagem = "Você não conseguiu fugir!";
-                System.out.println(ultimaMensagem);
-
-                inimigoAtual.acaoAutomatica(contexto.getJogador());
-
-                if (!contexto.getJogador().estaVivo()) {
-                    return;
-                }
-            }
-
-            System.out.println(ultimaMensagem);
-            pausar();
-
-        } else {
-
-            System.out.println("Não existe essa opção!");
-            pausar();
-        }
     }
 
     /**
