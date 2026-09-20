@@ -43,13 +43,13 @@ public class TelaJogo extends TelaBase{
         switch (opAcao) {
             case 1:
                 // Evento de exploração
-                break;
+                return ResultadoTela.Acao.MANTER;
             case 2:
                 // Utilizar Item
-                break;
+                return ResultadoTela.Acao.MANTER;
             case 3:
                 // Exibir detalhes do jogador
-                break;
+                return ResultadoTela.Acao.MANTER;
             case 4:
                 int opOpcao;
                 do {
@@ -63,13 +63,13 @@ public class TelaJogo extends TelaBase{
                 } while (opOpcao <= 0 || opOpcao > 3);
                 
                 if (opOpcao == 1) {
-                    // Escrever metodo para salvar jogo
+                    contexto.salvarJogo();
+                    return ResultadoTela.Acao.MANTER;
                 } else if (opOpcao == 2) {
                     return ResultadoTela.Acao.SAIR;
                 } else {
                     return ResultadoTela.Acao.MANTER;
                 }
-                break;
             default:
         }
         
