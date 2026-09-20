@@ -148,4 +148,24 @@ public abstract class Jogador extends Personagem{
     public void setPocoesMana(int pocoesMana) {
         this.pocoesMana = pocoesMana;
     }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setVidaMaxima(int vidaMaxima) {
+        this.vidaMaxima = vidaMaxima;
+    }
+
+    public void setVidaAtual(int vidaAtual) {
+        this.vidaAtual = vidaAtual;
+    }
+
+    public void setAtaqueBase(int ataqueBase) {
+        this.ataqueBase = ataqueBase;
+    }
+
+    public void setDefesaBase(int defesaBase) {
+        this.defesaBase = defesaBase;
+    }
 }
