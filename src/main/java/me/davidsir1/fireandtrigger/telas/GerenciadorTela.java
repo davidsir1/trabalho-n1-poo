@@ -18,8 +18,8 @@ public class GerenciadorTela {
     }
     
     public void executar() {
+        TelaBase atual = null;
         while (rodando) {
-            TelaBase atual = null;
             switch (estadoAtual) {
                 case IR_PARA_INICIAL:
                     atual = new TelaInicial(contexto);

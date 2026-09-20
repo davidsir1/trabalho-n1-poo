@@ -124,4 +124,48 @@ public abstract class Jogador extends Personagem{
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+    public void setExperienciaAtual(double experienciaAtual) {
+        this.experienciaAtual = experienciaAtual;
+    }
+
+    public void setExperienciaProximoNivel(double experienciaProximoNivel) {
+        this.experienciaProximoNivel = experienciaProximoNivel;
+    }
+
+    public void setManaMaxima(int manaMaxima) {
+        this.manaMaxima = manaMaxima;
+    }
+
+    public void setManaAtual(int manaAtual) {
+        this.manaAtual = manaAtual;
+    }
+
+    public void setPocoesVida(int pocoesVida) {
+        this.pocoesVida = pocoesVida;
+    }
+
+    public void setPocoesMana(int pocoesMana) {
+        this.pocoesMana = pocoesMana;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setVidaMaxima(int vidaMaxima) {
+        this.vidaMaxima = vidaMaxima;
+    }
+
+    public void setVidaAtual(int vidaAtual) {
+        this.vidaAtual = vidaAtual;
+    }
+
+    public void setAtaqueBase(int ataqueBase) {
+        this.ataqueBase = ataqueBase;
+    }
+
+    public void setDefesaBase(int defesaBase) {
+        this.defesaBase = defesaBase;
+    }
 }
