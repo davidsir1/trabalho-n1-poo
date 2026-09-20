@@ -79,9 +79,29 @@ public class TelaJogo extends TelaBase {
 
                 case 2:
                     System.out.println("Sistema de itens ainda não implementado.");
-                    pausar();
-                    break;
 
+                    int opPocao;
+                    do {
+                        System.out.println("====================================");
+                        System.out.println("1 - Usar Poção de Vida (" 
+                                + jogador.getPocoesVida() + " disponíveis)");
+                        System.out.println("2 - Usar Poção de Mana (" 
+                                + jogador.getPocoesVida() + " disponíveis)");
+                        System.out.println("3 - Voltar");
+                        System.out.print("Opção: ");
+                        opPocao = leitura.nextInt();
+                        if (opPocao < 1 || opPocao > 3) System.out.println("Não existe essa opção.");
+                    } while(opPocao < 1 || opPocao > 3);
+                    
+                    if (opPocao == 1) {
+                        ultimaMensagem = jogador.usarPocaoVida() ?
+                                "Você usou 1 poção de vida." : "Você não tem poção de vida.";
+                    } else if (opPocao == 2) {
+                        ultimaMensagem = jogador.usarPocaoMana() ?
+                                "Você usou 1 poção de mana." : "Você não tem poção de mana.";
+                    }
+                    
+                    break;
                 case 3:
                     exibirStatus();
                     pausar();
